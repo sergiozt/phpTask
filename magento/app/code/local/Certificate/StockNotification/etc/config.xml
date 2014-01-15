@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Certificate_StockNotification>
+            <version>0.1.0</version>
+        </Certificate_StockNotification>
+    </modules>
+    <adminhtml>
+        <events>
+            <cataloginventory_stock_item_save_after>
+                <observers>
+                    <certificate_stockNotification_observer>
+                        <type>model</type>
+                        <class>Certificate_StockNotification_Model_Observer</class>
+                        <method>sentInStockNotification</method>
+                    </certificate_stockNotification_observer>
+                </observers>
+            </cataloginventory_stock_item_save_after>
+        </events>
+    </adminhtml>
+    <global>
+        <template>
+            <email>
+                <stockNotification translate="label" module="certificate_stockNotification">
+                    <label>Out of Stock Subscription</label>
+                    <file>stockNotification/product_stock_notification.html</file>
+                    <type>text</type>
+                </stockNotification>
+            </email>
+        </template>
+    </global>
+    <default>
+        <stockNotification>
+            <email>
+                <sender_email_identity>general</sender_email_identity>
+                <template>stockNotification</template>
+            </email>
+        </stockNotification>
+    </default>
+</config>

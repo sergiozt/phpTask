@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Certificate_StockNotification>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Certificate_StockNotification>
+    </modules>
+</config>
