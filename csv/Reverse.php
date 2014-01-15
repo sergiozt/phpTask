@@ -92,6 +92,12 @@ class Csv_Reverse
     }
 }
 
+/**
+ * Set input Csv file Name
+ * setOutputCsv method can take two parameters:
+ * change position of all elements or only for column(default in columns)
+ *
+ * */
 $inputFileName = 'file.csv';
 $reverse = new Csv_Reverse();
 $reverse->setOutputCsv($inputFileName);
